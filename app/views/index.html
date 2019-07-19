@@ -1,5 +1,4 @@
-
-{% extends "layout.html" %}
+{% extends "index-page/dwp-prototype-index-page.html" %}
 
 {% block pageTitle %}
   GOV.UK Prototype Kit
@@ -9,35 +8,52 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        The GOV.UK Prototype Kit
-        <span class="govuk-caption-xl">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-      <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
+      
+      {% set mostRecent = true %}
+      <div class="dwp-prototype-summary {{'dwp-prototype-summary--most-recent' if mostRecent }}">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+            <dl>
+              <dt class="govuk-heading-s">Date of design</dt>
+              <dd class="govuk-body">[date]</dd>
+            </dl>
+          </div>
 
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
+          <div class="govuk-grid-column-one-third">
+            <dl>
+              <dt class="govuk-heading-s">Version</dt>
+              <dd class="govuk-body">[version]</dd>
+            </dl>
+          </div>
 
-      <h2 class="govuk-heading-m">About this page</h2>
+          <div class="govuk-grid-column-one-third">
+            <dl>
+              <dt class="govuk-heading-s">JIRA story</dt>
+              <dd class="govuk-body">[story]</dd>
+            </dl>
+          </div>
+        </div>
 
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
+        <h2 class="govuk-heading-m">Feature name</h2>
 
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
+        <h3 class="govuk-heading-s">Changes</h3>
+        <p class="govuk-body">
+          First iteration.
+        </p>
 
-      <h2 class="govuk-heading-m">Examples and documentation</h2>
+        <h3 class="govuk-heading-s">Research notes</h3>
+        <p class="govuk-body">
+          Not researched yet
+        </p>
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li><a href="/docs/tutorials-and-examples">Example pages and documentation</a></li>
-        <li>
-          <a href="https://design-system.service.gov.uk">
-            GOV.UK Design System
-          </a>
-        </li>
-      </ul>
+        <br>
+
+        <a href="/pages/page-1" class="govuk-button govuk-button--start">
+          Start now
+        </a>
+      </div>
+      {% set mostRecent = false %}
+
     </div>
 </div>
 
